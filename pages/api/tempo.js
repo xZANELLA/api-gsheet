@@ -3,7 +3,7 @@ function tempo(request, reponse) {
 
   response.json({
     date: dynamicDate.toGMTString()
-  })
+  });
 
 }
 
