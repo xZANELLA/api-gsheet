@@ -15,8 +15,7 @@ function apiSheet(request, response) {
       return doc;
   }
       response.json({
-        doc: doc;
+        doc: doc
       });
-  });
   
 }
