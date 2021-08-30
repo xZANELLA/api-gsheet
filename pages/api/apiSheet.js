@@ -1,8 +1,9 @@
+function apiSheet(request, response){
 
   const { GoogleSpreadsheet } = require('google-spreadsheet');
   const credenciais = require('./credenciais.json');
 
-   function await apiSheet(request, reponse){
+  const getDoc = async () => {
       const doc = new GoogleSpreadsheet('1EOx10mMHKiMFjLIRYe42BMRrZ5ZeoyWThr_FWHIiNF0');
       
       await doc.useServiceAccountAuth({
@@ -10,7 +11,9 @@
           private_key: credenciais.private_key.replace(/\\n/g, '\n')
       })
       await doc.loadInfo();
-      return reponse.doc;
+      return response.json({tittle: doc.tittle});
+  }
+
   }
 
 export default apiSheet;
