@@ -14,10 +14,9 @@ function apiSheet(request, response) {
       await doc.loadInfo();
       return doc;
   }
-      response.json({
-        doc: doc
-      });
-  
+      response.getDoc().then(doc => {
+    console.log(doc.title);
+});
 }
 
 export default apiSheet;
