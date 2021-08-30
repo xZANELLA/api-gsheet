@@ -1,4 +1,4 @@
-function apiSheet(request, response){
+function sheet(request, response){
 
   const { GoogleSpreadsheet } = require('google-spreadsheet');
   const credenciais = require('./credenciais.json');
@@ -16,4 +16,4 @@ function apiSheet(request, response){
 
   }
 
-export default apiSheet;
+export default sheet;
