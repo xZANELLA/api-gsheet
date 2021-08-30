@@ -14,11 +14,9 @@ function apiSheet(request, response) {
       await doc.loadInfo();
       return doc;
   }
-      response.json(){
+      response.json({
         doc: doc;
-      };
+      });
   });
   
 }
-
-export default apiSheet;
