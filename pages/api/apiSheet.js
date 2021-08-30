@@ -19,3 +19,5 @@ function apiSheet(request, response) {
       });
   
 }
+
+export default apiSheet;
