@@ -2,7 +2,7 @@
   const { GoogleSpreadsheet } = require('google-spreadsheet');
   const credenciais = require('./credenciais.json');
 
-   function apiSheet(request, reponse){
+   function await apiSheet(request, reponse){
       const doc = new GoogleSpreadsheet('1EOx10mMHKiMFjLIRYe42BMRrZ5ZeoyWThr_FWHIiNF0');
       
       await doc.useServiceAccountAuth({
