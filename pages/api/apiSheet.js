@@ -14,9 +14,9 @@ function apiSheet(request, response) {
       await doc.loadInfo();
       return doc;
   }
-      response.json({
-        name: doc.title;
-      });
+      response.json(){
+        doc: doc;
+      };
   });
   
 }
