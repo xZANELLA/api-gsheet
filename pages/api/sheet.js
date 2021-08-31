@@ -13,6 +13,5 @@ const getDoc = async () => {
 }
 
     export default function handler(req, res){
-      const docc = getDoc()
-      res.status(200).json(docc)
+      res.status(200).json({nome: "teste se esse trem funciona mesmo"})
   };
