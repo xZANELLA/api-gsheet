@@ -13,6 +13,7 @@ const getDoc = async () => {
 }
 
     export default async function handler(req, res){
+      
       let doccc = await getDoc();
 
       res.status(200).json({doc: doccc});
