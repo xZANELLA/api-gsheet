@@ -11,7 +11,7 @@
       });
 
       await doc.loadInfo(); // loads document properties and worksheets
-      res.console.log(doc.title);
+      res.json(doc);
 
       } catch(err){
         res.status(500).json({statusCode: 500, message: err.message})
