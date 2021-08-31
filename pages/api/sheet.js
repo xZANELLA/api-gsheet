@@ -2,9 +2,9 @@
   const credenciais = require('./credenciais.json');
 
   const getDoc = async (req, res) => {
-      const doc = new GoogleSpreadsheet('1EOx10mMHKiMFjLIRYe42BMRrZ5ZeoyWThr_FWHIiNF0');
       
       try{
+        const doc = new GoogleSpreadsheet('1EOx10mMHKiMFjLIRYe42BMRrZ5ZeoyWThr_FWHIiNF0');
         await doc.useServiceAccountAuth({
           client_email: credenciais.client_email,
           private_key: credenciais.private_key.replace(/\\n/g, '\n')
