@@ -13,6 +13,6 @@ const getDoc = async () => {
 }
 
     export default function handler(req, res){
-      const docc = getDoc().then(doc => {doc})
+      const docc = getDoc()
       res.status(200).json(docc)
   };
