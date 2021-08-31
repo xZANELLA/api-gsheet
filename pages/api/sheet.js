@@ -16,5 +16,5 @@ const getDoc = async () => {
       
       let doccc = await getDoc();
 
-      res.status(200).docc;
+      res.docc;
   };
