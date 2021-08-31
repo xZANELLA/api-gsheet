@@ -12,8 +12,8 @@ const getDoc = async () => {
     return auxdoc;
 }
 
-    export default function handler(req, res){
+    export default async function handler(req, res){
       let docc = await getDoc();
 
-      res.status(200).json({"doc": docc});
+      res.status(200).json({doc: docc});
   };
