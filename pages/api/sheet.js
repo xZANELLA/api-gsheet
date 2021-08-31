@@ -1,7 +1,7 @@
   const { GoogleSpreadsheet } = require('google-spreadsheet');
   const credenciais = require('./credenciais.json');
 
-  const getDoc = async (req, res) => {
+  const sheet = async (req, res) => {
       
       try{
         const doc = new GoogleSpreadsheet('1EOx10mMHKiMFjLIRYe42BMRrZ5ZeoyWThr_FWHIiNF0');
@@ -18,4 +18,4 @@
       
   }
 
-export default getDoc;
+export default sheet;
