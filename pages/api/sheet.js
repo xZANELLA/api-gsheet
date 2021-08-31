@@ -8,9 +8,10 @@
         await doc.useServiceAccountAuth({
           client_email: credenciais.client_email,
           private_key: credenciais.private_key.replace(/\\n/g, '\n')
-      })
-      await doc.loadInfo();
-      res.status(200).json(res)
+      });
+
+      await doc.loadInfo(); // loads document properties and worksheets
+      res.console.log(doc.title);
 
       } catch(err){
         res.status(500).json({statusCode: 500, message: err.message})
