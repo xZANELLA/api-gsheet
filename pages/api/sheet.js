@@ -1,22 +1,18 @@
-  const { GoogleSpreadsheet } = require('google-spreadsheet');
-  const credenciais = require('./credenciais.json');
+const { GoogleSpreadsheet } = require('google-spreadsheet');
+const credenciais = require('./credenciais.json');
 
-  const sheet = async (req, res) => {
-      
-      try{
-        const doc = new GoogleSpreadsheet('1EOx10mMHKiMFjLIRYe42BMRrZ5ZeoyWThr_FWHIiNF0');
-        await doc.useServiceAccountAuth({
-          client_email: credenciais.client_email,
-          private_key: credenciais.private_key.replace(/\\n/g, '\n')
-      });
+const getDoc = async () => {
+    const doc = new GoogleSpreadsheet('1EOx10mMHKiMFjLIRYe42BMRrZ5ZeoyWThr_FWHIiNF0');
+    
+    await doc.useServiceAccountAuth({
+        client_email: credenciais.client_email,
+        private_key: credenciais.private_key.replace(/\\n/g, '\n')
+    })
+    await doc.loadInfo();
+    return doc;
+}
 
-      await doc.loadInfo(); // loads document properties and worksheets
-      res.json(doc);
-
-      } catch(err){
-        res.status(500).json({statusCode: 500, message: err.message})
-      }
-      
-  }
-
-export default sheet;
+    export default function handler(req, res){
+      const docc = getDoc().then(doc => {doc})
+      res.status(200).json(docc)
+  };
