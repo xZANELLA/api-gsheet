@@ -10,7 +10,7 @@
           private_key: credenciais.private_key.replace(/\\n/g, '\n')
       })
       await doc.loadInfo();
-      res.status(200).json({doc})
+      res.status(200).json(res)
 
       } catch(err){
         res.status(500).json({statusCode: 500, message: err.message})
